@@ -1,4 +1,4 @@
-package br.com.rodrigobraz.SpringAwsApi.repository;
+package br.com.rodrigobraz.SpringAwsApi.repositories;
 
 import br.com.rodrigobraz.SpringAwsApi.domain.RequestStage;
 import org.springframework.data.jpa.repository.JpaRepository;

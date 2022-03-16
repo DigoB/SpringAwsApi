@@ -1,4 +1,4 @@
-package br.com.rodrigobraz.SpringAwsApi.repository;
+package br.com.rodrigobraz.SpringAwsApi.repositories;
 
 import br.com.rodrigobraz.SpringAwsApi.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT FROM User WHERE email = ?1 AND password = ?2")
+    @Query("SELECT u FROM User u WHERE u.email = :email AND password = :password")
     public Optional<User> login(String email, String password);
+
+    Optional<User> findByEmail(String email);
 }
