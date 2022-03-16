@@ -31,7 +31,7 @@ public class UserService {
     }
 
     public User createUser(UserDTO dto) {
-        findById(dto.getId());
+        findByEmail(dto);
         return repository.save(mapper.map(dto, User.class));
     }
 
